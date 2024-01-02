@@ -1,0 +1,52 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Search Page</title>
+        <link rel="stylesheet" href="../static/style.css">
+    </head>
+    <body>
+        <h1>Search Page</h1>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <form action="/search" method="GET">
+            <label for="search-input">Search:</label>
+            <input type="text" id="search-input" name="query" required>
+
+            <label for="algorithm-select">Select Search Algorithm:</label>
+            <select id="algorithm-select" name="algorithm">
+                <option value="boolean">Boolean Model</option>
+                <option value="extended_boolean">Extended Boolean Model</option>
+                <option value="vector">Vector Model</option>
+                <!-- Add more options as needed -->
+            </select>
+
+            <input type="submit" value="Search">
+        </form>
+
+        <div id="search-results">
+    {% if query %}
+        <h2>Search Results for "{{ query }}" using "{{ algorithm }}" Algorithm</h2>
+        {% if results %}
+            <ul>
+                {% for result in results %}
+                    <li><a href="{{ result }}">{{ result }}</a></li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No results found. Please try a different query.</p>
+        {% endif %}
+    {% endif %}
+</div>
+
+      <script src="../static/script.js"></script>
+    </body>
+    </html>

@@ -1,0 +1,16 @@
+- Python Files:
+app.py (main Flask application file)
+file_handler.py (for handling file uploads and conversion)
+indexer.py (to handle indexing and database operations)
+search_engine.py (to handle search functionalities)
+
+- Templates Directory:
+indexing_settings.html (HTML file for the indexing settings page)
+search_page.html (HTML file for the search page)
+
+- Static Directory:
+style.css (for styling your web pages, including the Dark Theme)
+script.js (fo javascripts codes)
+
+- Database File:
+database.db (SQLite database file to store indexed documents and user settings)

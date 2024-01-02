@@ -1,0 +1,115 @@
+/* General reset and base styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #121212;
+    color: #ffffff;
+}
+
+/* Typography */
+h1 {
+    font-size: 2em;
+    text-align: center;
+    margin-top: 0.5em;
+}
+
+h2 {
+    font-size: 1.5em;
+    color: #BBBBBB;
+}
+
+/* Form Styling */
+form {
+    margin: 2em auto;
+    width: 90%;
+    max-width: 600px;
+}
+
+label {
+    display: block;
+    margin-top: 1em;
+    color: #BBBBBB;
+}
+
+input[type="file"],
+input[type="text"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 0.5em;
+    background: #1E1E1E;
+    border: none;
+    color: #FFFFFF;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    margin-top: 1em;
+    background: #0A84FF;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #0971CE;
+}
+
+/* Alert message styling */
+.alert {
+    padding: 15px;
+    margin: 1em 0;
+    border-left: 5px solid;
+}
+
+.alert-success {
+    background-color: #003300;
+    border-color: #00CC00;
+}
+
+.alert-error {
+    background-color: #330000;
+    border-color: #CC0000;
+}
+
+/* Search Results */
+#search-results {
+    width: 90%;
+    max-width: 600px;
+    margin: 2em auto;
+}
+
+#search-results ul {
+    list-style: none;
+    padding: 0;
+}
+
+#search-results li {
+    padding: 10px;
+    margin-top: 5px;
+    background: #1E1E1E;
+    transition: background-color 0.3s;
+}
+
+#search-results li:hover {
+    background-color: #333333;
+}
+
+#search-results a {
+    text-decoration: none;
+    color: #0A84FF;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    input[type="submit"] {
+        padding: 10px;
+    }
+}

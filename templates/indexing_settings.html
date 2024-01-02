@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Indexing Settings</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <h1>Indexing Settings</h1>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <form action="/index" method="POST" enctype="multipart/form-data">
+        <label for="file-upload">Upload Word files:</label>
+        <input type="file" id="file-upload" name="files" accept=".doc, .docx" multiple required>
+
+        <label for="language-select">Choose Language:</label>
+        <select id="language-select" name="language">
+            <option value="english">English</option>
+            <option value="arabic">Arabic</option>
+        </select>
+
+        <label for="algorithm-select">Select Tokenization Algorithm:</label>
+        <select id="algorithm-select" name="tokenization_algorithm">
+            <option value="Whitespace">Whitespace</option>
+            <option value="Word">Word</option>
+            <!-- Add more options as needed -->
+        </select>
+
+        <input type="submit" value="Index">
+    </form>
+    <script src="../static/script.js"></script>
+</body>
+</html>
